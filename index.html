@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>myapp</title>
+    <link rel="stylesheet" href="css/fonts/iconfont.css">
+    <link rel="stylesheet" href="scss/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <i class="iconfont icon-xiangzuo"></i>
+            <span>无连接</span>
+            <i class="iconfont icon-gengduo-2"></i>
+        </header>
+        <section>
+            <div class="tab">
+                <dl>
+                    <dt class="active"><i class="iconfont icon-tuichu"></i></dt>
+                    <dd>电源</dd>
+                </dl>
+                <dl>
+                    <dt><i class="iconfont icon-shouye"></i></dt>
+                    <dd>首页</dd>
+                </dl>
+                <dl>
+                    <dt><i class="iconfont icon-gongzuo"></i></dt>
+                    <dd>菜单</dd>
+                </dl>
+                <dl>
+                    <dt><i class="iconfont icon-fenxiang1"></i></dt>
+                    <dd>分享</dd>
+                </dl>
+
+            </div>
+            <div class="content">
+                <p>查看电源</p>
+                <p class="none">查看首页</p>
+                <p class="none">查看菜单</p>
+                <p class="none">查看分享</p>
+            </div>
+            <!-- <div class="content">
+                <p>滑动控制上下左右，点击确定长按调节电视音量</p>
+            </div>
+            <div class="content">
+                <p>滑动控制上下左右，点击确定长按调节电视音量</p>
+            </div>
+            <div class="content">
+                <p>滑动控制上下左右，点击确定长按调节电视音量</p>
+            </div> -->
+        </section>
+        <footer>
+            <p><i class="iconfont icon-gongzuo"></i></p>
+            <p><i class="iconfont icon-tijiaodingdan"></i></p>
+        </footer>
+    </div>
+    <script src="libs/flexible.js"></script>
+    <script src="libs/zepto.js"></script>
+    <script>
+        $('dt').click(function() {
+            var idx = $(this).parent().index();
+            $('dt').removeClass('active');
+            $(this).addClass('active');
+            $('.content').find('p').eq(idx).removeClass('none').siblings().addClass('none');
+        })
+    </script>
+</body>
+
+</html>
